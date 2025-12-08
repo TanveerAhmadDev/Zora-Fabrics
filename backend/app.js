@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 
-dbConnect();
+
 
 app.use(
   cors({
