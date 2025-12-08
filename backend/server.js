@@ -1,0 +1,41 @@
+import express from "express";
+import dotenv from "dotenv";
+import morgan from "morgan";
+import ProductRouter from "./routes/Products.Routes.js";
+import CategoryRouter from "./Routes/Category.Routes.js";
+import AuthRouter from "./routes/auth.routes.js";
+import { errorHandler } from "./middlewares/ErrorHandler.js";
+import dbConnect from "./config/dbConnect.js";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 4000;
+
+dbConnect();
+
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
+app.use(morgan("dev"));
+app.use(cookieParser());
+app.use(express.json());
+
+app.use("/api/product", ProductRouter);
+app.use("/api/category", CategoryRouter);
+app.use("/api/auth", AuthRouter);
+
+app.get("/", (req, res) => {
+  res.send("Hello from MVC Backend!");
+});
+
+app.use(errorHandler);
+
+app.listen(port, () => {
+  console.log(`Server is Start http://localhost:${port}`);
+});
