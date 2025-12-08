@@ -5,6 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+     "dev": "vercel dev",  
     "start": "node api/index.js",
     "build": "echo 'No build step required for Node.js'"
   },
