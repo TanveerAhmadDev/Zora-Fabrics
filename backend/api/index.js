@@ -3,10 +3,10 @@ import dbConnect from "../config/dbConnect.js";
 
 export default async function handler(req, res) {
   try {
-    await dbConnect(); // ensure DB is connected
-    return app(req, res); // pass request to Express app
-  } catch (error) {
-    console.error("Serverless function error:", error);
+    await dbConnect();
+    return app(req, res);
+  } catch (err) {
+    console.error("Serverless function error:", err);
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
