@@ -1,4 +1,4 @@
-import AsyncHandler from "../utils/AsyncHandler.js";
+import AsyncHandler from "../utils/asyncHandler.js";
 
 export const errorHandler = async (err, req, res, next) => {
   const statusCode = err.statusCode || 500;

@@ -2,7 +2,7 @@ import express from "express";
 import {
   AllCategorys,
   createCategory,
-} from "../controllers/Category.controller.js";
+} from "../controllers/category.controller.js";
 
 const CategoryRouter = express.Router();
 

@@ -4,8 +4,8 @@ import {
   getAllProducts,
   getProductsByCategory,
   ProductDetails,
-} from "../controllers/Product.controller.js";
-import upload from "../middlewares/Muler.js";
+} from "../controllers/croduct.controller.js";
+import upload from "../middlewares/muler.js";
 
 const ProductRouter = express.Router();
 

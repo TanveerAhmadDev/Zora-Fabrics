@@ -1,8 +1,8 @@
-import CategoryModel from "../models/Category.model.js";
 import ProductModel from "../models/Product.model.js";
-import ApiError from "../utils/ApiError.js";
-import ApiResponse from "../utils/ApiResponse.js";
-import AsyncHandler from "../utils/AsyncHandler.js";
+import CategoryModel from "../models/Category.model.js";
+import ApiError from "../utils/apiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import AsyncHandler from "../utils/asyncHandler.js";
 import uploadOnCloudinary from "../utils/cloudinary.js";
 
 export const addProduct = AsyncHandler(async (req, res, next) => {
