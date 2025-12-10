@@ -5,7 +5,6 @@ import ProductRouter from "./routes/Products.Routes.js";
 import CategoryRouter from "./Routes/Category.Routes.js";
 import AuthRouter from "./routes/auth.routes.js";
 import { errorHandler } from "./middlewares/ErrorHandler.js";
-import dbConnect from "./config/dbConnect.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
