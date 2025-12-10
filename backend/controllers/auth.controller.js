@@ -1,4 +1,4 @@
-import AdminModel from "../models/admin.model.js";
+import AdminModel from "../models/Admin.model.js";
 import ApiError from "../utils/apiError.js";
 import ApiResponse from "../utils/apiResponse.js";
 import AsyncHandler from "../utils/asyncHandler.js";
