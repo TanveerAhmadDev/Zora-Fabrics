@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import ProductRouter from "./routes/Products.Routes.js";
-import CategoryRouter from "./Routes/Category.Routes.js";
+import CategoryRouter from "./routes/Category.Routes.js";
 import AuthRouter from "./routes/auth.routes.js";
 import { errorHandler } from "./middlewares/ErrorHandler.js";
 import cors from "cors";
