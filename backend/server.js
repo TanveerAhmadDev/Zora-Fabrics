@@ -8,6 +8,7 @@ import { errorHandler } from "./middlewares/ErrorHandler.js";
 import dbConnect from "./config/dbConnect.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import mongoose from "mongoose";
 
 dotenv.config();
 
@@ -26,6 +27,25 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json());
 
+let dbConnected = false;
+
+async function dbConnect() {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    dbConnected = true;
+    console.log("DB is Connected");
+  } catch (error) {
+    console.log("DB is Not Connected", error);
+  }
+}
+
+app.use((req, res, next) => {
+  if (!dbConnected) {
+    dbConnect();
+  }
+  next();
+});
+
 app.use("/api/product", ProductRouter);
 app.use("/api/category", CategoryRouter);
 app.use("/api/auth", AuthRouter);
@@ -36,6 +56,4 @@ app.get("/", (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(port, () => {
-  console.log(`Server is Start http://localhost:${port}`);
-});
+module.exports = app;
