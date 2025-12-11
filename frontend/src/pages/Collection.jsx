@@ -100,6 +100,20 @@ const Collection = () => {
           ))}
         </div>
       )}
+      {collectionName === "Home" && (
+        <div className="grid grid-cols-1 justify-items-center  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:px-10 mt-10">
+          {(products || []).reverse().map((product, index) => (
+            <CardForMens
+              key={product?.id || index}
+              Images={product?.Images || []}
+              onClick={() => ProductPage(product._id)}
+              ProductName={product?.ProductName || "No Name"}
+              ProductPriceWithOutSale={product.ProductPriceWithOutSale}
+              ProductPriceWithSale={product.ProductPriceWithSale}
+            />
+          ))}
+        </div>
+      )}
 
       <Footer />
     </>

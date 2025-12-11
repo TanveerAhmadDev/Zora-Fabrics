@@ -86,7 +86,7 @@ const SignUp = () => {
             <button
               onClick={() => SignUp()}
               className="uppercase bg-[#232323] text-white py-3  md:w-full text-sm font-bold
-                   hover:text-black hover:border hover:bg-white 
+                
                     border border-[#232323]
                   transition-all duration-300 ease-in-out rounded-sm"
             >

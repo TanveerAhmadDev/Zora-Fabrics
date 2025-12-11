@@ -23,12 +23,11 @@ const AddProduct = () => {
   const backsideRef = useRef();
   const designRef = useRef();
   const workingRef = useRef();
+  const { serverURL } = useContext(ServerContextApi);
 
   async function getCategorys() {
     try {
-      const result = await axios.get(
-        "http://172.16.144.19:8080/api/category/categorys"
-      );
+      const result = await axios.get(`${serverURL}/api/category/categorys`);
       console.log(result);
       setCategorys(result?.data?.data?.Categorys);
     } catch (error) {
@@ -53,7 +52,7 @@ const AddProduct = () => {
       if (working_close_up) form.append("working_close_up", working_close_up);
 
       const result = await axios.post(
-        "http://172.16.144.19:8080/api/product/create-product",
+        `${serverURL}/api/product/create-product`,
         form,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
