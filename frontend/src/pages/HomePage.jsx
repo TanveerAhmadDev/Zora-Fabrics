@@ -141,6 +141,29 @@ const HomePage = () => {
               />
             ))}
         </div>
+        <div className="mt-3 h-10 flex justify-center items-center font-bold text-lg px-2">
+          <div className="bg-[#6d6d6d89] h-[0.5px] w-full"></div>
+          <span className="w-50 text-center text-xl">HOME</span>
+          <div className="bg-[#6d6d6d89] h-[0.5px] w-full"></div>
+        </div>
+        <div className="grid grid-cols-1 justify-items-center  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:px-10 mt-10">
+          {(products || [])
+            .filter((product) =>
+              product.Category.CategoryName?.includes("Home")
+            )
+            .slice(-8)
+            .reverse()
+            .map((product, index) => (
+              <CardForMens
+                key={product?.id || index}
+                onClick={() => ProductPage(product._id)}
+                Images={product?.Images || []}
+                ProductName={product?.ProductName || "No Name"}
+                ProductPriceWithOutSale={product.ProductPriceWithOutSale}
+                ProductPriceWithSale={product.ProductPriceWithSale}
+              />
+            ))}
+        </div>
       </div>
       <Footer />
     </>
