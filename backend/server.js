@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
-import ProductRouter from "./routes/Products.Routes.js";
 import CategoryRouter from "./routes/Category.Routes.js";
+import ProductRouter from "./routes/Products.Routes.js";
 import AuthRouter from "./routes/Auth.Routes.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 // import dbConnect from "./config/dbConnect.js";
