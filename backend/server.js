@@ -19,7 +19,7 @@ const port = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: "https://zora-fabrics.vercel.app",
+    origin: ["https://zora-fabrics.vercel.app", "http://localhost:5173"],
     credentials: true,
   })
 );
