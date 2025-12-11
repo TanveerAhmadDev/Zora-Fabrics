@@ -5,7 +5,7 @@ import {
   getProductsByCategory,
   ProductDetails,
 } from "../controllers/Product.controller.js";
-import upload from "../middlewaress/muler.js";
+import upload from "../middlewares/muler.js";
 
 const ProductRouter = express.Router();
 
