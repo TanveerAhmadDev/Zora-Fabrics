@@ -4,7 +4,7 @@ import morgan from "morgan";
 import ProductRouter from "./routes/Products.Routes.js";
 import CategoryRouter from "./routes/Category.Routes.js";
 import AuthRouter from "./routes/Auth.Routes.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { errorHandler } from "./middlewaress/errorHandler.js";
 // import dbConnect from "./config/dbConnect.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
