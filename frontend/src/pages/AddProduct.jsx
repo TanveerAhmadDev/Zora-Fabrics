@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import AdminNavBar from "../components/AdminNavBar";
 import ContactBar from "../components/ContactBar";
 import NavBar from "../components/NavBar";
 import axios from "axios";
+import { ServerContextApi } from "../context/ServerContext";
 
 const AddProduct = () => {
   const [categorys, setCategorys] = useState([]);
